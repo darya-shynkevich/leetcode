@@ -5,7 +5,7 @@
 # The query result format is in the following example.
 
 
-CREATE TABLE Products (product_id INT, low_fats ENUM('Y', 'N'), recyclable ENUM('Y', 'N'));
+CREATE TABLE IF NOT EXISTS Products (product_id INT, low_fats ENUM('Y', 'N'), recyclable ENUM('Y', 'N'));
 
 
 INSERT INTO Products(product_id, low_fats, recyclable) VALUES
