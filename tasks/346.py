@@ -10,15 +10,17 @@
 # At most 104 calls will be made to next.
 
 
+import collections
+
+
 class MovingAverage:
 
     def __init__(self, size: int):
         self.window_size = size
 
-        self.prev_sum = 0
         self.count = 0
 
-        self.history = []
+        self.history = collections.deque()
 
     def next(self, val: int) -> float:
 
@@ -26,13 +28,10 @@ class MovingAverage:
 
         if self.count < self.window_size:
             self.count = self.count + 1
-            self.prev_sum = self.prev_sum + val
         else:
-            len_history = len(self.history)
-            self.history = self.history[len_history - self.window_size: len_history]
-            self.prev_sum = sum(self.history)
+            self.history.popleft()
 
-        return round(self.prev_sum / self.count, 5)
+        return round(sum(self.history) / self.count, 5)
 
 
 # Your MovingAverage object will be instantiated and called as such:
