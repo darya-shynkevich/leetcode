@@ -4,7 +4,12 @@
 
 class Solution:
     def sum(self, num1: int, num2: int) -> int:
-        pass
+        return num1 + num2
 
 
+if __name__ == "__main__":
+    solution = Solution()
 
+    assert solution.sum(num1=12, num2=5) == 17
+
+    assert solution.sum(num1=-10, num2=4) == -6
