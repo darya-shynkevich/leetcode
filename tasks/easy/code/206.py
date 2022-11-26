@@ -21,13 +21,11 @@ class ListNode:
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         previous = None
-        current = head
 
-        while current:
-            next_node: ListNode = current.next
-            current.next = previous
-            previous = current
-            current = next_node
+        while head.next:
+            next_node: ListNode = head.next
+            previous = head
+            next_node.next = previous
 
         return previous
 
