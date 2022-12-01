@@ -14,7 +14,6 @@ import collections
 
 
 class MovingAverage:
-
     def __init__(self, size: int):
         self.window_size = size
 

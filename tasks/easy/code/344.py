@@ -30,13 +30,3 @@ if __name__ == "__main__":
 
     solution.reverseString(s=["H", "a", "n", "n", "a", "h"])
     assert solution.s == ["h", "a", "n", "n", "a", "H"]
-
-    solution.reverseString(s=[
-        "A", " ", "m", "a", "n", ",", " ", "a", " ", "p", "l", "a", "n", ",", " ", "a", " ", "c", "a", "n", "a", "l",
-        ":", " ", "P", "a", "n", "a", "m", "a"
-    ])
-    assert solution.s == [
-        "a", "m", "a", "n", "a", "P", " ", ":", "l", "a", "n", "a", "c", " ", "a", " ", ",", "n", "a", "l", "p", " ",
-        "a", " ", ",", "n", "a", "m", " ", "A"
-    ]
-

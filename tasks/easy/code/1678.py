@@ -10,12 +10,10 @@
 # 1 <= command.length <= 100
 # command consists of "G", "()", and/or "(al)" in some order.
 
+
 class Solution:
     def interpret(self, command: str) -> str:
-        replacement_table = {
-            "()": "o",
-            "(al)": "al"
-        }
+        replacement_table = {"()": "o", "(al)": "al"}
 
         for original, replacement in replacement_table.items():
             command = command.replace(original, replacement)

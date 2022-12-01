@@ -24,19 +24,27 @@ from string import ascii_uppercase
 
 class Solution:
     def cellsInRange(self, s: str) -> List[str]:
-        if not s or len(s) != 5: return []
+        if not s or len(s) != 5:
+            return []
 
         first_column = s[0]
         last_column = s[3]
 
-        letters_range = ascii_uppercase[ascii_uppercase.find(first_column):ascii_uppercase.find(last_column) + 1]
+        letters_range = ascii_uppercase[
+            ascii_uppercase.find(first_column): ascii_uppercase.find(last_column) + 1
+        ]
 
         first_column_index = int(s[1])
         last_column_index = int(s[4])
 
         result = []
         for letter in letters_range:
-            result.extend([f"{letter}{i}" for i in range(first_column_index, last_column_index + 1)])
+            result.extend(
+                [
+                    f"{letter}{i}"
+                    for i in range(first_column_index, last_column_index + 1)
+                ]
+            )
 
         return result
 

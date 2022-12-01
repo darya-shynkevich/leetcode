@@ -2,10 +2,11 @@
 
 # Constraints: 1 <= n <= 10^5
 
-class Solution:  # Time: O(log(n)), Space: O(1)
 
+class Solution:  # Time: O(log(n)), Space: O(1)
     def subtractProductAndSum(self, n: int) -> int:
-        if n == 0: return 1
+        if n == 0:
+            return 1
 
         n_product = 1
         n_sum = 0

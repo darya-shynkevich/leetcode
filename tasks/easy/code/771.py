@@ -11,7 +11,6 @@
 
 
 class Solution:
-
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
 
         sorted_stones = sorted(stones)
@@ -44,4 +43,3 @@ if __name__ == "__main__":
     stones = "ZZ"
 
     assert solution.numJewelsInStones(jewels=jewels, stones=stones) == 0
-

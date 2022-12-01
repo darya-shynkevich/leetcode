@@ -37,5 +37,3 @@ if __name__ == "__main__":
     assert solution.numIdenticalPairs(nums=[1, 1, 1, 1]) == 6
 
     assert solution.numIdenticalPairs(nums=[1, 2, 3]) == 0
-
-    assert solution.numIdenticalPairs(nums=[1, 5, 3, 2, 4, 2, 5, 2, 2, 6, 6, 2, 4, 4, 5, 1, 5]) == 21

@@ -17,7 +17,8 @@
 
 class Solution:
     def calculateTime(self, keyboard: str, word: str) -> int:
-        if not word or not keyboard: return 0
+        if not word or not keyboard:
+            return 0
 
         keyboard_map = {key: i for i, key in enumerate(keyboard)}
 

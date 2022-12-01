@@ -25,6 +25,8 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
 
-    assert solution.anagramMappings(nums1=[12, 28, 46, 32, 50], nums2=[50, 12, 32, 46, 28]) == [1, 4, 3, 2, 0]
+    assert solution.anagramMappings(
+        nums1=[12, 28, 46, 32, 50], nums2=[50, 12, 32, 46, 28]
+    ) == [1, 4, 3, 2, 0]
 
     assert solution.anagramMappings(nums1=[84, 46], nums2=[84, 46]) == [0, 1]

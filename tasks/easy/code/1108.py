@@ -7,7 +7,7 @@
 
 class Solution:
     def defangIPaddr(self, address: str) -> str:
-        return address.replace('.', '[.]')
+        return address.replace(".", "[.]")
 
 
 if __name__ == "__main__":

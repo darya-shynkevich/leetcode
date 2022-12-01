@@ -18,7 +18,7 @@ class Solution:
 
         words_max = 0
         for sentence in sentences:
-            words_max = max(len(sentence.split(' ')), words_max)
+            words_max = max(len(sentence.split(" ")), words_max)
 
         return words_max
 
@@ -26,8 +26,20 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
 
-    assert solution.mostWordsFound(
-        sentences=["alice and bob love leetcode", "i think so too", "this is great thanks very much"]
-    ) == 6
+    assert (
+        solution.mostWordsFound(
+            sentences=[
+                "alice and bob love leetcode",
+                "i think so too",
+                "this is great thanks very much",
+            ]
+        )
+        == 6
+    )
 
-    assert solution.mostWordsFound(sentences=["please wait", "continue to fight", "continue to win"]) == 3
+    assert (
+        solution.mostWordsFound(
+            sentences=["please wait", "continue to fight", "continue to win"]
+        )
+        == 3
+    )

@@ -22,7 +22,7 @@ class Solution:
         for i in range(len(s)):
             result.append(s[char_to_position_map[i]])
 
-        return ''.join(result)
+        return "".join(result)
 
 
 if __name__ == "__main__":

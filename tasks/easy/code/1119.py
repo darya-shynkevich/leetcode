@@ -5,11 +5,11 @@
 
 
 class Solution:
-    
+
     EXCLUDE_CHARACTERS = {"a", "e", "i", "o", "u"}
-    
+
     def removeVowels(self, s: str) -> str:
-        
+
         result = ""
         for char in s:
             if char in Solution.EXCLUDE_CHARACTERS:

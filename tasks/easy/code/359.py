@@ -22,7 +22,6 @@
 
 # Runtime: O(1), Space: O(n)
 class Logger:
-
     def __init__(self):
         self.locker = {}
 

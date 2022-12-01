@@ -17,7 +17,7 @@ class Solution:
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
 
     assert solution.countBits(n=2) == [0, 1, 1]

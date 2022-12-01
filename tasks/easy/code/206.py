@@ -15,6 +15,7 @@ class ListNode:  # Definition for singly-linked list.
         self.val = val
         self.next = next
 
+
 # class Solution:  # 1. Iterative (O(n) Time / O(1) Space)
 #     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 #         previous_node: Optional[ListNode] = None
@@ -45,7 +46,7 @@ class Solution:  # 2. Recursive (O(n) Time / O(n) Space)
         return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
 
     l5 = ListNode(5, None)

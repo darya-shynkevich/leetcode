@@ -19,7 +19,8 @@ from typing import List
 
 class Solution:
     def createTargetArray(self, nums: List[int], index: List[int]) -> List[int]:
-        if not nums or not index: return []
+        if not nums or not index:
+            return []
 
         result = []
         for n, i in zip(nums, index):
