@@ -11,7 +11,7 @@
 # Logger() Initializes the logger object.
 # bool shouldPrintMessage(int timestamp, string message)
 # Returns true if the message should be printed in the given timestamp, otherwise returns false.
-
+#
 # Constraints:
 #
 # 0 <= timestamp <= 109
