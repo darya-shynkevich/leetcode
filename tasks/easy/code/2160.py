@@ -6,7 +6,7 @@
 # Some of the possible pairs [new1, new2] are [22, 93], [23, 92], [223, 9] and [2, 329].
 # Return the minimum possible sum of new1 and new2.
 
-from itertools import permutations, combinations
+from itertools import combinations, permutations
 
 
 class Solution:

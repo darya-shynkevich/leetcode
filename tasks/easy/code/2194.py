@@ -18,8 +18,8 @@
 # '1' <= s[1] <= s[4] <= '9'
 # s consists of uppercase English letters, digits and ':'.
 
-from typing import List
 from string import ascii_uppercase
+from typing import List
 
 
 class Solution:

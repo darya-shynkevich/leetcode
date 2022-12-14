@@ -17,8 +17,8 @@
 # 1 <= words[i].length <= 12
 # words[i] consists of lowercase English letters.
 
-from typing import List
 from string import ascii_uppercase
+from typing import List
 
 
 class Solution:
