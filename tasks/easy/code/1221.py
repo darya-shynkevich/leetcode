@@ -35,3 +35,5 @@ if __name__ == "__main__":
     assert solution.balancedStringSplit(s="RLRRLLRLRL") == 4
 
     assert solution.balancedStringSplit(s="RLRRRLLRLL") == 2
+
+    assert solution.balancedStringSplit(s="RL") == 1
