@@ -9,16 +9,35 @@
 # OrderedStream(int n) Constructs the stream to take n values.
 # String[] insert(int idKey, String value) Inserts the pair (idKey, value) into the stream,
 # then returns the largest possible chunk of currently inserted values that appear next in the order.
+
+# Constraints:
+#
+# 1 <= n <= 1000
+# 1 <= id <= n
+# value.length == 5
+# value consists only of lowercase letters.
+# Each call to insert will have a unique id.
+# Exactly n calls will be made to insert.
+
 from typing import List
 
 
 class OrderedStream:
 
     def __init__(self, n: int):
-        pass
+        self.data = [None] * n
+        self.ptr = 0  # 0-indexed
 
     def insert(self, idKey: int, value: str) -> List[str]:
-        pass
+        idKey -= 1
+        self.data[idKey] = value
+        if idKey > self.ptr:
+            return []
+
+        while self.ptr < len(self.data) and self.data[self.ptr]:
+            self.ptr += 1
+
+        return self.data[idKey:self.ptr]
 
 
 if __name__ == "__main__":
