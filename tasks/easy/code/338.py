@@ -14,23 +14,62 @@ from typing import List
 
 
 class Solution:
+    # def countBits(self, n: int) -> List[int]:
+    #
+    #     # Time: O(n⋅log(n) / 2), Space: O(1)
+    #
+    #     result = [0]
+    #
+    #     for i in range(1, n + 1):
+    #
+    #         k = i
+    #         hamming_distance = 0
+    #         while k:
+    #             k = k & (k - 1)
+    #             hamming_distance += 1
+    #
+    #         result.append(hamming_distance)
+    #
+    #     return result
+
+    # def countBits(self, n: int) -> List[int]:
+    #
+    #     # Time: O(n), Space: O(1)
+    #
+    #     ans = [0] * (n + 1)
+    #     x = 0
+    #     b = 1
+    #
+    #     # [0, b) is calculated
+    #     while b <= n:
+    #         # generate [b, 2b) or [b, n) from [0, b)
+    #         while x < b and x + b <= n:
+    #             ans[x + b] = ans[x] + 1
+    #             x += 1
+    #         x = 0  # reset x
+    #         b = 2 * b
+    #
+    #     return ans
+
+    # def countBits(self, n: int) -> List[int]:
+    #
+    #     # Time: O(n), Space: O(1)
+    #
+    #     ans = [0] * (n + 1)
+    #     for x in range(1, n + 1):
+    #         # x >> 1: x // 2
+    #         # x & 1: x % 2
+    #         ans[x] = ans[x >> 1] + (x & 1)
+    #     return ans
+
     def countBits(self, n: int) -> List[int]:
 
-        # Time: O(n⋅log(n) / 2), Space: O(1)
+        # Time: O(n), Space: O(1)
 
-        result = [0]
-
-        for i in range(1, n + 1):
-
-            k = i
-            hamming_distance = 0
-            while k:
-                k = k & (k - 1)
-                hamming_distance += 1
-
-            result.append(hamming_distance)
-
-        return result
+        ans = [0] * (n + 1)
+        for x in range(1, n + 1):
+            ans[x] = ans[x & (x - 1)] + 1
+        return ans
 
 
 if __name__ == "__main__":
