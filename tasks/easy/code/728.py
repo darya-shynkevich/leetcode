@@ -28,6 +28,7 @@ class Solution:
         return True
 
     def selfDividingNumbers(self, left: int, right: int) -> List[int]:
+        # Time: O(len(left, right)), Space: O(1)
         result = []
 
         for number in range(left, right + 1):
