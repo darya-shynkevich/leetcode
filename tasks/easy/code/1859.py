@@ -20,6 +20,8 @@
 class Solution:
     def sortSentence(self, s: str) -> str:
 
+        # Time: O(len(s)), Space: O(len(s))
+
         words = s.split(' ')
 
         result = [None] * len(words)
