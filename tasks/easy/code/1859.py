@@ -19,7 +19,15 @@
 
 class Solution:
     def sortSentence(self, s: str) -> str:
-        pass
+
+        words = s.split(' ')
+
+        result = [None] * len(words)
+        for word in words:
+            place = int(word[-1]) - 1
+            result[place] = word[:-1]
+
+        return ' '.join(result)
 
 
 if __name__ == "__main__":
