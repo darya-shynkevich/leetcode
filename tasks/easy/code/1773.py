@@ -29,6 +29,9 @@ class Solution:
         return 2
 
     def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
+
+        # Time: O(n), Space: O(1)
+
         match_count = 0
 
         position = self.get_rule_position(ruleKey)
