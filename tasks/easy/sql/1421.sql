@@ -28,5 +28,6 @@ insert into Queries (id, year) values ('7', '2019');
 insert into Queries (id, year) values ('7', '2020');
 insert into Queries (id, year) values ('13', '2019');
 
+
 SELECT Q.id, Q.year, IFNULL(NPV.npv, 0) AS npv
 FROM Queries Q LEFT JOIN NPV on NPV.id = Q.id AND NPV.year = Q.year;
