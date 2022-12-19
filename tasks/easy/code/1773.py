@@ -19,8 +19,25 @@ from typing import List
 
 
 class Solution:
+
+    @staticmethod
+    def get_rule_position(ruleKey: str):
+        if ruleKey == "type":
+            return 0
+        elif ruleKey == "color":
+            return 1
+        return 2
+
     def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
-        pass
+        match_count = 0
+
+        position = self.get_rule_position(ruleKey)
+
+        for item in items:
+            if item[position] == ruleValue:
+                match_count += 1
+
+        return match_count
 
 
 if __name__ == "__main__":
