@@ -17,7 +17,19 @@ from typing import List
 
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-        pass
+        result = 0
+
+        num_to_index_map = {}
+        for i, num in enumerate(nums):
+            num_to_index_map[num] = i
+
+        for i, num in enumerate(nums):
+            second = num_to_index_map.get(num + diff)
+            third = num_to_index_map.get(num + 2 * diff)
+            if second and third:
+                result += 1
+
+        return result
 
 
 if __name__ == "__main__":
