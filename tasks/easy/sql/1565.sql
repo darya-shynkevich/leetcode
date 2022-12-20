@@ -19,3 +19,8 @@ insert into Orders (order_id, order_date, customer_id, invoice) values ('7', '20
 insert into Orders (order_id, order_date, customer_id, invoice) values ('8', '2020-12-03', '4', '77');
 insert into Orders (order_id, order_date, customer_id, invoice) values ('9', '2021-01-07', '3', '31');
 insert into Orders (order_id, order_date, customer_id, invoice) values ('10', '2021-01-15', '2', '20');
+
+SELECT DATE_FORMAT(order_date, '%Y-%m') as month, COUNT(order_id) as order_count, COUNT(distinct customer_id) as customer_count
+FROM Orders
+WHERE invoice > 20
+GROUP BY month
