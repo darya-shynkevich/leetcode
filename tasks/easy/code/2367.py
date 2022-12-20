@@ -17,6 +17,9 @@ from typing import List
 
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
+
+        # Time: O(n), Space O(n)
+
         result = 0
 
         num_to_index_map = {}
