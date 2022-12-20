@@ -17,6 +17,9 @@ from typing import List
 
 class Solution:
     def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:
+
+        # Time: O(n^2), Space: O(1)
+
         n = len(grid)
         result = [[0]*(n-2) for _ in range(n-2)]
 
