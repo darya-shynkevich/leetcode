@@ -19,6 +19,8 @@
 class Solution:
     def judgeCircle(self, moves: str) -> bool:
 
+        # Time: O(n), Space: O(n)
+
         robot_movement_map = {
             'U': 0,
             'D': 0,
