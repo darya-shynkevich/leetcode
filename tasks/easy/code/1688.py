@@ -12,7 +12,19 @@
 
 class Solution:
     def numberOfMatches(self, n: int) -> int:
-        pass
+        # result = 0
+        #
+        # while n > 1:
+        #     if n % 2 == 0:
+        #         result += n / 2
+        #         n = n / 2
+        #     else:
+        #         result += (n - 1) / 2
+        #         n = 1 + (n - 1) / 2
+        #
+        # return int(result)
+
+        return n - 1
 
 
 if __name__ == "__main__":
