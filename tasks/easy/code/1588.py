@@ -15,7 +15,17 @@ from typing import List
 
 class Solution:
     def sumOddLengthSubarrays(self, arr: List[int]) -> int:
-        pass
+        n = len(arr)
+
+        result = 0
+        for i, element in enumerate(arr):
+            current = [element]
+            for j in range(i+2, n, 2):
+                current.extend(arr[i:j+1])
+
+            result += sum(current)
+
+        return result
 
 
 if __name__ == "__main__":
