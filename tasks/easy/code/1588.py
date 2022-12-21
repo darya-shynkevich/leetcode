@@ -15,6 +15,9 @@ from typing import List
 
 class Solution:
     def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+
+        # Time: O(n^2), Space: O(n)
+
         n = len(arr)
 
         result = 0
