@@ -10,25 +10,41 @@
 # Follow up:
 #
 # Could you solve this problem in O(n) time complexity?
+import math
 from typing import List
 
 
 class Solution:
+    # def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+    #
+    #     # Time: O(n^2), Space: O(n)
+    #
+    #     n = len(arr)
+    #
+    #     result = 0
+    #     for i, element in enumerate(arr):
+    #         current = [element]
+    #         for j in range(i+2, n, 2):
+    #             current.extend(arr[i:j+1])
+    #
+    #         result += sum(current)
+    #
+    #     return result
+
     def sumOddLengthSubarrays(self, arr: List[int]) -> int:
 
-        # Time: O(n^2), Space: O(n)
+        # Time: O(n), Space: O(1)
 
         n = len(arr)
+        answer = 0
 
-        result = 0
         for i, element in enumerate(arr):
-            current = [element]
-            for j in range(i+2, n, 2):
-                current.extend(arr[i:j+1])
+            start, end = n - i, i + 1
+            total = start * end
+            odd = math.ceil(total / 2)
+            answer += element * odd
 
-            result += sum(current)
-
-        return result
+        return int(answer)
 
 
 if __name__ == "__main__":
