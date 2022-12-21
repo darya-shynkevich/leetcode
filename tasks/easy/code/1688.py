@@ -12,6 +12,8 @@
 
 class Solution:
     def numberOfMatches(self, n: int) -> int:
+        # Time: O(1), Space: O(1)
+
         # result = 0
         #
         # while n > 1:
