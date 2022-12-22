@@ -21,6 +21,9 @@
 
 class Solution:
     def maxDepth(self, s: str) -> int:
+
+        # Time: O(n), Space: O(1)
+
         max_depth = 0
 
         current_depth = 0
