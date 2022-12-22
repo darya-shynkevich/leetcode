@@ -17,8 +17,26 @@
 # s is a valid parentheses string.
 
 class Solution:
+
     def removeOuterParentheses(self, s: str) -> str:
-        pass
+        result = ""
+
+        first_open_parentheses_i = None
+
+        open_parentheses_count = close_parentheses_count = 0
+        for i, char in enumerate(s):
+            if char == "(":
+                if first_open_parentheses_i is None:
+                    first_open_parentheses_i = i
+                open_parentheses_count += 1
+            else:
+                close_parentheses_count += 1
+
+            if open_parentheses_count == close_parentheses_count:
+                result += s[first_open_parentheses_i+1:i]
+                first_open_parentheses_i = None
+
+        return result
 
 
 if __name__ == "__main__":
