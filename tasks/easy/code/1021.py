@@ -19,6 +19,9 @@
 class Solution:
 
     def removeOuterParentheses(self, s: str) -> str:
+
+        # Time: O(n), Space: O(1)
+
         result = ""
 
         first_open_parentheses_i = None
