@@ -21,7 +21,17 @@
 
 class Solution:
     def maxDepth(self, s: str) -> int:
-        pass
+        max_depth = 0
+
+        current_depth = 0
+        for i, char in enumerate(s):
+            if char == '(':
+                current_depth += 1
+            elif char == ')':
+                max_depth = max(max_depth, current_depth)
+                current_depth -= 1
+
+        return max_depth
 
 
 if __name__ == "__main__":
