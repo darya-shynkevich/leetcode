@@ -19,6 +19,8 @@ from typing import List
 
 class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        # Time: O(n * log(n)), Space: O(n)
+
         sorted_people = sorted(zip(names, heights), key=itemgetter(1), reverse=True)
 
         return [person[0] for person in sorted_people]
