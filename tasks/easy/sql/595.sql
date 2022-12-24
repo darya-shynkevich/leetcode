@@ -19,3 +19,7 @@ insert into World (name, continent, area, population, gdp) values ('Algeria', 'A
 insert into World (name, continent, area, population, gdp) values ('Andorra', 'Europe', 468, 78115, 3712000000);
 insert into World (name, continent, area, population, gdp) values ('Angola', 'Africa', 1246700, 20609294, 100990000000);
 
+
+SELECT name, population, area
+FROM World
+WHERE area >= 3000000 OR population >= 25000000;
