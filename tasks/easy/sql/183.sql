@@ -19,3 +19,7 @@ insert into Customers (id, name) values ('4', 'Max');
 Truncate table Orders;
 insert into Orders (id, customerId) values ('1', '3');
 insert into Orders (id, customerId) values ('2', '1');
+
+SELECT name AS Customers
+FROM Customers LEFT JOIN Orders O on Customers.id = O.customerId
+WHERE O.id is null;
