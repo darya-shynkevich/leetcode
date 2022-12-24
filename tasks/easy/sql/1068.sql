@@ -20,3 +20,5 @@ insert into Product (product_id, product_name) values ('100', 'Nokia');
 insert into Product (product_id, product_name) values ('200', 'Apple');
 insert into Product (product_id, product_name) values ('300', 'Samsung');
 
+SELECT product_name, year, price
+FROM Sales LEFT JOIN Product on Sales.product_id = Product.product_id;
