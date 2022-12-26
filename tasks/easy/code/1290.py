@@ -14,14 +14,29 @@
 from typing import List
 
 
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 class Solution:
-    def getDecimalValue(self, head: List[int]) -> int:
-        pass
+    def getDecimalValue(self, head: ListNode) -> int:
+        num = head.val
+        while head.next:
+            num = num * 2 + head.next.val
+            head = head.next
+        return num
 
 
 if __name__ == "__main__":
     solution = Solution()
 
-    assert solution.getDecimalValue(head=[1, 0, 1]) == 5
+    n3 = ListNode(val=1, next=None)
+    n2 = ListNode(val=0, next=n3)
+    n1 = ListNode(val=1, next=n2)
+    assert solution.getDecimalValue(head=n1) == 5
 
-    assert solution.getDecimalValue(head=[0]) == 0
+    solution = Solution()
+    n1 = ListNode(val=0, next=None)
+    assert solution.getDecimalValue(head=n1) == 0
