@@ -21,7 +21,14 @@ from typing import List
 
 class Solution:
     def minMovesToSeat(self, seats: List[int], students: List[int]) -> int:
-        pass
+        seats.sort()
+        students.sort()
+
+        movements_count = 0
+        for seat, student in zip(seats, students):
+            movements_count += abs(student - seat)
+
+        return movements_count
 
 
 if __name__ == "__main__":
