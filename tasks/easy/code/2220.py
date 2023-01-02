@@ -13,7 +13,13 @@
 
 class Solution:
     def minBitFlips(self, start: int, goal: int) -> int:
-        pass
+        xor = start ^ goal
+        distance = 0
+        while xor:
+            distance += 1
+            xor = xor & (xor - 1)  # remove the rightmost bit of '1'
+
+        return distance
 
 
 if __name__ == "__main__":
