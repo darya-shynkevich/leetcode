@@ -16,7 +16,18 @@ from typing import List
 
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
-        pass
+        counter = {}
+        for num in nums:
+            current_count = counter.get(num, 0)
+            counter.update({num: current_count + 1})
+
+        result = 0
+        for num in nums:
+            count = counter.get(num - k)
+            if count:
+                result += count
+
+        return result
 
 
 if __name__ == "__main__":
