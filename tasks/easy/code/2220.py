@@ -13,6 +13,9 @@
 
 class Solution:
     def minBitFlips(self, start: int, goal: int) -> int:
+
+        # Time O(log(n)), Space O(1)
+
         xor = start ^ goal
         distance = 0
         while xor:
