@@ -17,6 +17,9 @@
 
 class Solution:
     def truncateSentence(self, s: str, k: int) -> str:
+
+        # Time: O(N), Space: O(N)
+
         return ' '.join(s.split(' ')[:k])
 
 
