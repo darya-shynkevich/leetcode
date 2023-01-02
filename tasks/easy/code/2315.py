@@ -14,6 +14,9 @@
 
 class Solution:
     def countAsterisks(self, s: str) -> int:
+
+        # Time: O(N), Space: O(1)
+
         result = 0
 
         inside_pair = False
