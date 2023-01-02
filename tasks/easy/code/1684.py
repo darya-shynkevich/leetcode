@@ -15,6 +15,9 @@ from typing import List
 
 class Solution:
     def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+
+        # Time: O(N * M), N = len(words), M = max(len(word)), Space: O(1)
+
         allowed_hashmap = set()
         for char in allowed:
             allowed_hashmap.add(char)
