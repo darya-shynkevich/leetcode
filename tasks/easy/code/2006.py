@@ -16,6 +16,9 @@ from typing import List
 
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
+
+        # Time: O(N), Space: O(N)
+
         counter = {}
         for num in nums:
             current_count = counter.get(num, 0)
