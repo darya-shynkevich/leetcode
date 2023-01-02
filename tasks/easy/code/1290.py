@@ -23,8 +23,12 @@ class ListNode:
 class Solution:
     @staticmethod
     def getDecimalValue(head: ListNode) -> int:
+
+        # Time: O(N), Space: O(1)
+
         num = head.val
         while head.next:
+            # num = (num << 1) | head.next.val
             num = num * 2 + head.next.val
             head = head.next
         return num
