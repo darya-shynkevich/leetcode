@@ -15,7 +15,22 @@ from typing import List
 
 class Solution:
     def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
-        pass
+        allowed_hashmap = set()
+        for char in allowed:
+            allowed_hashmap.add(char)
+
+        result = 0
+        for word in words:
+            is_consistent = True
+            for char in word:
+                if char not in allowed_hashmap:
+                    is_consistent = False
+                    break
+
+            if is_consistent:
+                result += 1
+
+        return result
 
 
 if __name__ == "__main__":
