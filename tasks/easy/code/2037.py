@@ -21,6 +21,9 @@ from typing import List
 
 class Solution:
     def minMovesToSeat(self, seats: List[int], students: List[int]) -> int:
+
+        # Time: O(N), Space: O(1)
+
         seats.sort()
         students.sort()
 
