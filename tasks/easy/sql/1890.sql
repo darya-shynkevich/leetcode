@@ -4,6 +4,8 @@
 #
 # The query result format is in the following example.
 
+DROP TABLE IF EXISTS Logins;
+
 Create table If Not Exists Logins (user_id int, time_stamp datetime);
 
 Truncate table Logins;
@@ -16,3 +18,9 @@ insert into Logins (user_id, time_stamp) values ('2', '2020-01-16 02:49:50');
 insert into Logins (user_id, time_stamp) values ('2', '2019-08-25 07:59:08');
 insert into Logins (user_id, time_stamp) values ('14', '2019-07-14 09:00:00');
 insert into Logins (user_id, time_stamp) values ('14', '2021-01-06 11:59:59');
+
+
+SELECT user_id, MAX(time_stamp) AS last_stamp
+FROM Logins
+WHERE YEAR(time_stamp) = 2020
+GROUP BY user_id
