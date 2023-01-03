@@ -14,3 +14,8 @@ insert into cinema (id, movie, description, rating) values ('2', 'Science', 'fic
 insert into cinema (id, movie, description, rating) values ('3', 'irish', 'boring', '6.2');
 insert into cinema (id, movie, description, rating) values ('4', 'Ice song', 'Fantacy', '8.6');
 insert into cinema (id, movie, description, rating) values ('5', 'House card', 'Interesting', '9.1');
+
+SELECT *
+FROM cinema
+WHERE id % 2 != 0 AND description NOT LIKE '%boring%'
+ORDER BY rating DESC;
