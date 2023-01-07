@@ -22,7 +22,17 @@ from typing import List
 
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        pass
+        stack = []
+        nums2_map = {}
+
+        for num in nums2:
+            while stack and num > stack[-1]:
+                target = stack.pop()
+                nums2_map[target] = num
+
+            stack.append(num)
+
+        return [nums2_map.get(num, -1) for num in nums1]
 
 
 if __name__ == "__main__":
@@ -31,3 +41,7 @@ if __name__ == "__main__":
     assert solution.nextGreaterElement(nums1=[4, 1, 2], nums2=[1, 3, 4, 2]) == [-1, 3, -1]
 
     assert solution.nextGreaterElement(nums1=[2, 4], nums2=[1, 2, 3, 4]) == [3, -1]
+
+    assert solution.nextGreaterElement(nums1=[1, 3, 5, 2, 4], nums2=[6, 5, 4, 3, 2, 1, 7]) == [7, 7, 7, 7, 7]
+
+    assert solution.nextGreaterElement(nums1=[2, 3, 5, 1, 4], nums2=[6, 5, 4, 3, 1, 2, 7]) == [7, 7, 7, 2, 7]
