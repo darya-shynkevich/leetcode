@@ -22,6 +22,9 @@ from typing import List
 
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+
+        # Time: O(nums1.length + nums2.length), Space: O(nums1.length + nums2.length)
+
         stack = []
         nums2_map = {}
 
