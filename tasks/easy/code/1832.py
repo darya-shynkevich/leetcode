@@ -7,11 +7,12 @@
 #
 # 1 <= sentence.length <= 1000
 # sentence consists of lowercase English letters.
+from string import ascii_lowercase
 
 
 class Solution:
     def checkIfPangram(self, sentence: str) -> bool:
-        pass
+        return len(ascii_lowercase) == len(set(sentence))
 
 
 if __name__ == "__main__":
