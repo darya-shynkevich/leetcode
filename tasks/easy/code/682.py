@@ -28,6 +28,9 @@ from typing import List
 
 class Solution:
     def calPoints(self, operations: List[str]) -> int:
+
+        # Time: O(n), Space: O(n)
+
         scores = []
         for operation in operations:
             if operation == "+":
