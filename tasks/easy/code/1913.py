@@ -15,10 +15,14 @@ from typing import List
 
 class Solution:
     # def maxProductDifference(self, nums: List[int]) -> int:
+    #     Time: O(n log(n)), Space: O(1)
     #     nums.sort()
     #     return nums[-1] * nums[-2] - nums[0] * nums[1]
 
     def maxProductDifference(self, nums: List[int]) -> int:
+
+        # Time: O(n), Space: O(1)
+
         min1 = min2 = float('inf')
         max1 = max2 = float('-inf')
 
