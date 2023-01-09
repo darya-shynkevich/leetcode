@@ -21,6 +21,9 @@
 
 class Solution:
     def countPoints(self, rings: str) -> int:
+
+        # Time: O(n), Space: O(n)
+
         rings_map = {}
         for i in range(0, len(rings), 2):
             ring_number_to_colors = rings_map.get(rings[i+1])
