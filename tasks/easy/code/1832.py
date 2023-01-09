@@ -12,6 +12,9 @@ from string import ascii_lowercase
 
 class Solution:
     def checkIfPangram(self, sentence: str) -> bool:
+
+        # Time: O(n), Space: O(1)
+
         return len(ascii_lowercase) == len(set(sentence))
 
 
