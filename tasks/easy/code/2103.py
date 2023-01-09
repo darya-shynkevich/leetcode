@@ -21,7 +21,23 @@
 
 class Solution:
     def countPoints(self, rings: str) -> int:
-        pass
+        rings_map = {}
+        for i in range(0, len(rings), 2):
+            ring_number_to_colors = rings_map.get(rings[i+1])
+            if ring_number_to_colors is not None:
+                color = ring_number_to_colors.get(rings[i])
+                if color is None:
+                    ring_number_to_colors.update({rings[i]: True})
+            else:
+                rings_map.update({rings[i+1]: {rings[i]: True}})
+
+        result = 0
+        for color in rings_map.values():
+            color_values = color.values()
+            if len(color_values) == 3:
+                result += 1
+
+        return result
 
 
 if __name__ == "__main__":
