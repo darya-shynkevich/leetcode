@@ -14,9 +14,26 @@ from typing import List
 
 
 class Solution:
+    # def maxProductDifference(self, nums: List[int]) -> int:
+    #     nums.sort()
+    #     return nums[-1] * nums[-2] - nums[0] * nums[1]
+
     def maxProductDifference(self, nums: List[int]) -> int:
-        nums.sort()
-        return nums[-1] * nums[-2] - nums[0] * nums[1]
+        min1 = min2 = float('inf')
+        max1 = max2 = float('-inf')
+
+        for number in nums:
+            if number <= min1:
+                min1, min2 = number, min1
+            elif number < min2:
+                min2 = number
+
+            if number >= max1:
+                max1, max2 = number, max1
+            elif number > max2:
+                max2 = number
+
+        return max1 * max2 - min1 * min2
 
 
 if __name__ == "__main__":
