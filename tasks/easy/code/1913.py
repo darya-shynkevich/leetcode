@@ -15,7 +15,9 @@ from typing import List
 
 class Solution:
     def maxProductDifference(self, nums: List[int]) -> int:
-        pass
+        sorted_nums = sorted(nums)
+        n = len(nums)
+        return sorted_nums[n - 1] * sorted_nums[n - 2] - sorted_nums[0] * sorted_nums[1]
 
 
 if __name__ == "__main__":
