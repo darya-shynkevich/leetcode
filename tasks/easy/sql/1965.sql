@@ -21,3 +21,16 @@ Truncate table Salaries;
 insert into Salaries (employee_id, salary) values ('5', '76071');
 insert into Salaries (employee_id, salary) values ('1', '22517');
 insert into Salaries (employee_id, salary) values ('4', '63539');
+
+
+SELECT Employees.employee_id
+FROM Employees LEFT OUTER JOIN Salaries S on Employees.employee_id = S.employee_id
+WHERE S.employee_id is null
+
+UNION
+
+SELECT S.employee_id
+FROM Salaries S LEFT OUTER JOIN Employees on Employees.employee_id = S.employee_id
+WHERE Employees.employee_id is null
+
+ORDER BY employee_id
