@@ -8,9 +8,9 @@ DROP TABLE IF EXISTS SalesPerson;
 DROP TABLE IF EXISTS Company;
 DROP TABLE IF EXISTS Orders;
 
-Create table If Not Exists SalesPerson (sales_id int, name varchar(255), salary int, commission_rate int, hire_date date);
-Create table If Not Exists Company (com_id int, name varchar(255), city varchar(255));
-Create table If Not Exists Orders (order_id int, order_date date, com_id int, sales_id int, amount int);
+Create table If Not Exists SalesPerson (sales_id varchar(255), name varchar(255), salary int, commission_rate varchar(255), hire_date varchar(255));
+Create table If Not Exists Company (com_id varchar(255), name varchar(255), city varchar(255));
+Create table If Not Exists Orders (order_id varchar(255), order_date varchar(255), com_id varchar(255), sales_id varchar(255), amount varchar(255));
 
 Truncate table SalesPerson;
 insert into SalesPerson (sales_id, name, salary, commission_rate, hire_date) values ('1', 'John', '100000', '6', '4/1/2006');
@@ -30,3 +30,14 @@ insert into Orders (order_id, order_date, com_id, sales_id, amount) values ('1',
 insert into Orders (order_id, order_date, com_id, sales_id, amount) values ('2', '2/1/2014', '4', '5', '5000');
 insert into Orders (order_id, order_date, com_id, sales_id, amount) values ('3', '3/1/2014', '1', '1', '50000');
 insert into Orders (order_id, order_date, com_id, sales_id, amount) values ('4', '4/1/2014', '1', '4', '25000');
+
+
+SELECT SalesPerson.name FROM SalesPerson
+WHERE SalesPerson.name not in (SELECT SalesPerson.name
+ FROM SalesPerson
+          LEFT JOIN Orders ON SalesPerson.sales_id = Orders.sales_id
+          LEFT JOIN Company on Orders.com_id = Company.com_id
+ WHERE Company.name = 'RED'
+ GROUP BY SalesPerson.name)
+
+
