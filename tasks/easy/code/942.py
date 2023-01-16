@@ -16,6 +16,9 @@ from typing import List
 class Solution:
 
     def diStringMatch(self, s: str) -> List[int]:
+
+        # Time: O(n), Space: O(1)
+
         n = len(s)
 
         current_max = 0
