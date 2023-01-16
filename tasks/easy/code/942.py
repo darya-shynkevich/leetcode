@@ -8,14 +8,33 @@
 
 # Constraints:
 #
-# 1 <= s.length <= 105
+# 1 <= s.length <= 10^5
 # s[i] is either 'I' or 'D'.
 from typing import List
 
 
 class Solution:
+
     def diStringMatch(self, s: str) -> List[int]:
-        pass
+        n = len(s)
+
+        current_max = 0
+        current_min = n
+
+        result = []
+        for i in range(n):
+            if s[i] == 'I':
+                number = current_max
+                current_max = current_max + 1
+            else:
+                number = current_min
+                current_min = current_min - 1
+
+            result.append(number)
+
+        result.append(current_min)
+
+        return result
 
 
 if __name__ == "__main__":
