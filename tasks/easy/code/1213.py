@@ -14,7 +14,7 @@ class Solution:
 
         # Time: O(min(len(arr1), len(arr2), len(arr3)), Space: O(N)
 
-        return list(set(arr1) & set(arr2) & set(arr3))
+        return list(sorted(set(arr1) & set(arr2) & set(arr3)))
 
     # def arraysIntersection(self, arr1: List[int], arr2: List[int], arr3: List[int]) -> List[int]:
     #
