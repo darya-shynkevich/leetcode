@@ -29,6 +29,6 @@ insert into Activity (machine_id, process_id, activity_type, timestamp) values (
 insert into Activity (machine_id, process_id, activity_type, timestamp) values (2, 1, 'end', 5);
 
 
-SELECT machine_id, ROUND(SUM(CASE WHEN activity_type='start' THEN -1 * timestamp ELSE timestamp END ) / COUNT(DISTINCT process_id), 3) AS processing_time
+SELECT machine_id, ROUND(SUM(IF(activity_type = 'start', -1 * timestamp, timestamp)) / COUNT(DISTINCT process_id), 3) AS processing_time
 FROM Activity
 GROUP BY machine_id
