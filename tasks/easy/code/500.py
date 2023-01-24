@@ -23,6 +23,9 @@ class Solution:
     THIRD = {'z', 'x', 'c', 'v', 'b', 'n', 'm', }
 
     def findWords(self, words: List[str]) -> List[str]:
+
+        # Time: O(N), Space: O(1)
+
         result = []
         for word in words:
             word_set = set(word.lower())
@@ -35,10 +38,10 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
 
-    # assert solution.findWords(words=["Hello", "Alaska", "Dad", "Peace"]) == ["Alaska", "Dad"]
-    #
-    # assert solution.findWords(words=["omk"]) == []
-    #
-    # assert solution.findWords(words=["adsdf", "sfd"]) == ["adsdf", "sfd"]
+    assert solution.findWords(words=["Hello", "Alaska", "Dad", "Peace"]) == ["Alaska", "Dad"]
+
+    assert solution.findWords(words=["omk"]) == []
+
+    assert solution.findWords(words=["adsdf", "sfd"]) == ["adsdf", "sfd"]
 
     assert solution.findWords(words=["qwertyuiop"]) == ["qwertyuiop"]

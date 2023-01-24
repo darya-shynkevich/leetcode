@@ -16,6 +16,9 @@ from typing import List
 
 class Solution:
     def repeatedNTimes(self, nums: List[int]) -> int:
+
+        # Time: O(N), Space: O(N)
+
         nums_set = set()
         for num in nums:
             if num in nums_set:
