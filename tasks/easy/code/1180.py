@@ -7,19 +7,16 @@
 
 class Solution:
     def countLetters(self, s: str) -> int:
-        s_map = {}
-        for element in s:
-            count = s_map.get(element, 0)
-            s_map.update({element: count + 1})
-
-        result = 0
-        for value in s_map.values():
-            breakpoint()
-            result += sum([i for i in range(value + 1)])
-
-
-        print(result)
-        return result
+        total = 1
+        substrings = [0] * len(s)
+        substrings[0] = 1
+        for i in range(1, len(s)):
+            if s[i - 1] == s[i]:
+                substrings[i] = substrings[i-1] + 1
+            else:
+                substrings[i] = 1
+            total += substrings[i]
+        return total
 
 
 if __name__ == "__main__":
