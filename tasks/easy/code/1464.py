@@ -10,6 +10,9 @@ from typing import List
 
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
+
+        # Time: O(N * log(N)), Space: O(1)
+
         nums.sort()
         return (nums[-1] - 1) * (nums[-2] - 1)
 
