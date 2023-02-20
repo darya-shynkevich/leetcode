@@ -15,7 +15,7 @@ from typing import List
 class Solution:
     def shortestDistance(self, wordsDict: List[str], word1: str, word2: str) -> int:
 
-        # Time: O(n), Space: O91)
+        # Time: O(n), Space: O(1)
 
         distance = math.inf
 
