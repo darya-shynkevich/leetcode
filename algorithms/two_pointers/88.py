@@ -22,28 +22,55 @@ from typing import List
 
 
 class Solution:
+
+    # def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    #     """
+    #     Do not return anything, modify nums1 in-place instead.
+    #     """
+    #
+    #     # Time: O(mn), Space: O(1)
+    #
+    #     if m + n == 1:
+    #         nums1[0] = nums1[0] or nums2[0]
+    #         return nums1
+    #
+    #     if not nums1 or not nums2:
+    #         nums1 = nums2 or nums1[:m]
+    #         return nums2 or nums1[:m]
+    #
+    #     for i in range(m + n):
+    #         if i >= m:
+    #             nums1[i:] = nums2
+    #             return nums1
+    #
+    #         if nums1[i] > nums2[0]:
+    #             nums1[i], nums2[0] = nums2[0], nums1[i]
+    #
+    #             k = 0
+    #             while k < n - 1 and nums2[k] > nums2[k + 1]:
+    #                 nums2[k], nums2[k + 1] = nums2[k + 1], nums2[k]
+    #                 k += 1
+    #
+    #     return nums1
+
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        """
+        # Follow-up, Time: O(m + n)
 
-        if m + n == 1:
-            nums1[0] = nums1[0] or nums2[0]
-            return nums1
+        # Set p1 and p2 to point to the end of their respective arrays.
+        p1 = m - 1
+        p2 = n - 1
 
-        i = j = 0
-
-        while i < n + m and j < n:
-
-            print(nums1, nums2, i, j)
-
-            if nums2[j] < nums1[i]:
-                nums1[i], nums2[j] = nums2[j], nums1[i]
-            elif nums1[i] == 0:
-                nums1[i] = nums2[j]
-                j += 1
+        # And move p backwards through the array, each time writing
+        # the smallest value pointed at by p1 or p2.
+        for p in range(n + m - 1, -1, -1):
+            if p2 < 0:
+                break
+            if p1 >= 0 and nums1[p1] > nums2[p2]:
+                nums1[p] = nums1[p1]
+                p1 -= 1
             else:
-                i += 1
+                nums1[p] = nums2[p2]
+                p2 -= 1
 
         return nums1
 
@@ -51,12 +78,17 @@ class Solution:
 if __name__ == "__main__":
     solution = Solution()
 
-    # assert solution.merge(nums1=[1, 2, 3, 0, 0, 0], m=3, nums2=[2, 5, 6], n=3) == [1, 2, 2, 3, 5, 6]
-    #
-    # assert solution.merge(nums1=[1, 2, 2, 3, 5, 0, 0, 0], m=5, nums2=[2, 5, 6], n=3) == [1, 2, 2, 2, 3, 5, 5, 6]
-    #
-    # assert solution.merge(nums1=[1], m=1, nums2=[], n=0) == [1]
-    #
-    # assert solution.merge(nums1=[0], m=0, nums2=[1], n=1) == [1]
+    assert solution.merge(nums1=[1, 2, 3, 0, 0, 0], m=3, nums2=[2, 5, 6], n=3) == [1, 2, 2, 3, 5, 6]
 
-    assert solution.merge(nums1=[4, 5, 6, 0, 0, 0], m=3, nums2=[1, 2, 3], n=3) == [1, 2, 2, 3, 5, 6]
+    assert solution.merge(nums1=[1, 2, 2, 3, 5, 0, 0, 0], m=5, nums2=[2, 5, 6], n=3) == [1, 2, 2, 2, 3, 5, 5, 6]
+
+    assert solution.merge(nums1=[1], m=1, nums2=[], n=0) == [1]
+
+    assert solution.merge(nums1=[0], m=0, nums2=[1], n=1) == [1]
+
+    assert solution.merge(nums1=[4, 5, 6, 0, 0, 0], m=3, nums2=[1, 2, 3], n=3) == [1, 2, 3, 4, 5, 6]
+
+    assert solution.merge(nums1=[1,2,3,4,5], m=5, nums2=[], n=0) == [1,2,3,4,5]
+
+    assert solution.merge(nums1=[-1,0,0,3,3,3,0,0,0], m=6, nums2=[1,2,2], n=3) == [-1, 0, 0, 1, 2, 2, 3, 3, 3]
+
