@@ -40,10 +40,7 @@ if __name__ == "__main__":
     node_a_2 = ListNode(next=node_b_4, x=1)
     node_a_1 = ListNode(next=node_a_2, x=4)
 
-    print(solution.getIntersectionNode(headA=node_a_1, headB=node_b_1))
-
-    #
-    # assert solution.getIntersectionNode(headA=node_b_1, headB=node_b_1)
+    assert solution.getIntersectionNode(headA=node_b_1, headB=node_b_1)
 
 
 
