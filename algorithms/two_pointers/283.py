@@ -6,11 +6,16 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+
+        # Tome: O(n), Space: O(1)
+
         if len(nums) in [0, 1]:
             return nums
 
         i, j = 0, 1
         while j < len(nums) and i < len(nums):
+
+            j = max(j, i)
 
             if nums[j] == 0:
                 j += 1
