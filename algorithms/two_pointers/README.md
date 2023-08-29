@@ -1,6 +1,6 @@
 # Two Pointers
 
-*==Two are better than one if they act as one.==*
+*== Two are better than one if they act as one. ==*
 
 *This approach is generally used to search pairs in a sorted array. This approach works in constant space.*
 
@@ -19,11 +19,11 @@ Common patterns in the two-pointer approach entail:
 6. Pointer at the beginning of two sorted arrays.
 7. Sliding Window (Advanced)
 
-###### Recognise It
+### Recognise It
 
 There are a few ways we can use the Two Pointer approach. First, if the input is an array or string, we should keep Two Pointers (along with hash tables) on our tool belt.
 
-*==Stronger signals for Two Pointers are….==*
+*== Stronger signals for Two Pointers are…. ==*
 1. If we want to reduce nested loops to a single pass.
 2. If the input is sequenced or sorted.
 3. If we need to compare a value at one index with value at another index.
@@ -31,6 +31,6 @@ There are a few ways we can use the Two Pointer approach. First, if the input is
 5. If we partition the array.
 
 
-**References:**
+### References:
 1. [Leetcode is Easy! The Two Pointer Pattern]([https://medium.com/@timpark0807/leetcode-is-easy-two-pointers-90b9b0f2eb43](https://www.google.com/url?q=https://medium.com/@timpark0807/leetcode-is-easy-two-pointers-90b9b0f2eb43&sa=D&source=calendar&usd=2&usg=AOvVaw3HOscey4eQ6T6lcrlqObK2)  )
 2. [Two Pointers Approach — Python Code](https://towardsdatascience.com/two-pointer-approach-python-code-f3986b602640)
