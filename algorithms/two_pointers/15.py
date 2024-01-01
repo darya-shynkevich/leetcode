@@ -3,32 +3,29 @@ from typing import List
 
 
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
-        if len(nums) < 3:
-            return [[]]
+    def threeSum(self, nums: List[int]):
 
-        result = []
         nums_map = collections.defaultdict(list)
         for i in range(len(nums)):
             nums_map[nums[i]].append(i)
 
-        k_set = set()
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                target_number = - nums[i] - nums[j]
-                if target_number in nums_map:
-                    indexes = nums_map.get(target_number)
-                    for k in indexes:
-                        if k != i and k != j:
-                            result.append([i, j, k])
-                            k_set.add(k)
+        result = set()
+        for i, val1 in enumerate(nums):
+            for j, val2 in enumerate(nums[i+1:]):
+                target_number = - val1 - val2
+
+                triplets = tuple(sorted([val1, val2, target_number]))
+                if all([
+                    target_number in nums_map,
+                    triplets not in result,
+                ]):
+                    result.add(triplets)
 
         print(result)
-        return [list(_) for _ in result]
 
-
+        return result
 
 if __name__ == "__main__":
     solution = Solution()
 
-    assert solution.threeSum(nums = [-1,0,1,2,-1,-4]) == [[-1,-1,2],[-1,0,1]]
+    assert sorted(solution.threeSum(nums = [-1,0,1,2,-1,-4])) == sorted({(-1, 0, 1), (-1, -1, 2)})

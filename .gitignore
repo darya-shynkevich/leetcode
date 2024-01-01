@@ -161,3 +161,5 @@ cython_debug/
 
 mocks/
 .idea/
+test_1.py
+test_1.sql

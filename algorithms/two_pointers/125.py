@@ -3,6 +3,8 @@
 # Alphanumeric characters include letters and numbers.
 #
 # Given a string s, return true if it is a palindrome, or false otherwise.
+import string
+
 
 # Constraints:
 #
@@ -20,25 +22,23 @@ class Solution:
         if len_s in [0, 1]:
             return True
 
-        lower_s = s.lower()
+        i, j = 0, len_s - 1
+        while i < j:
+            start = s[i].lower()
+            end = s[j].lower()
 
-        i = 0
-        j = len_s - 1
-        while i < len_s and j >= 0:
-
-            if not lower_s[i].isalnum():
+            if start == end:
                 i += 1
-                continue
-
-            if not lower_s[j].isalnum():
                 j -= 1
-                continue
 
-            if lower_s[i] != lower_s[j]:
+            elif not start.isalnum():
+                i += 1
+
+            elif not end.isalnum():
+                j -= 1
+
+            else:
                 return False
-
-            i += 1
-            j -= 1
 
         return True
 
