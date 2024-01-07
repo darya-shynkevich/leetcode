@@ -107,3 +107,7 @@ while i < len(nums):
 
     i += 1
 ```
+
+# References:
+
+1. An Easier Way to Solve All “Stock Trading” Questions on Leetcode
