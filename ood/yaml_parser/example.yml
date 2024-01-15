@@ -1,0 +1,3 @@
+rest:
+  url: "https://example.org/primenumbers/v1"
+  port: 8443
