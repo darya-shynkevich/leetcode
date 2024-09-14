@@ -1,16 +1,20 @@
-from typing import List
-
 class Solution:
-    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+    def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
         stack = []
-        result = [0] * len(temperatures)
-        for i in range(len(temperatures)):
-            while stack and temperatures[stack[-1]] < temperatures[i]:
-                result[stack[-1]] = i - stack[-1]
+        answer = []
+
+        for temp in temperatures:
+            i = 0
+            while stack and stack[-1] < temp:
+                i += 1
                 stack.pop()
-            stack.append(i)
 
-        return result
+            stack.append(temp)
+            answer.append(i)
+
+        print(answer)
 
 
-
+if __name__ == '__main__':
+    solution = Solution()
+    solution.dailyTemperatures([73,74,75,71,69,72,76,73])

@@ -10,6 +10,7 @@ functools.lru_cache -- help to solve most DP
 
 [Dynamic Programming](https://www.youtube.com/playlist?list=PLDV1Zeh2NRsAsbafOroUBnNV8fhZa7P4u)
 
+[Solve DP problems like butter 🧈🧈!!!](https://medium.com/@mukhopadhyaypushan42/solve-dp-problems-like-butter-c6022e39f422)
 
 # References
 

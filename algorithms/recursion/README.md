@@ -1,5 +1,11 @@
 # Recursion
 
+> Rrecursion is mathematical induction in action
+
+In both, we have general and boundary conditions, 
+with the general condition breaking the problem into smaller and smaller pieces. 
+The initial or boundary condition terminates the recursion.
+
 # References:
 
 [Lecture 8 | Programming Abstractions (video)](https://www.youtube.com/watch?v=gl3emqCuueQ&list=PLFE6E58F856038C69&index=8)
