@@ -12,6 +12,38 @@ functools.lru_cache -- help to solve most DP
 
 [Solve DP problems like butter 🧈🧈!!!](https://medium.com/@mukhopadhyaypushan42/solve-dp-problems-like-butter-c6022e39f422)
 
+Dynamic Programming (DP) involves breaking down problems into smaller subproblems and solving them using a bottom-up or top-down approach.
+
+Use this pattern for problems with overlapping subproblems and optimal substructure.
+
+DP itself has multiple sub-patterns. Some of the most important ones are:
+
+1. Fibonacci Numbers
+2. 0/1 Knapsack
+3. Longest Common Subsequence (LCS)
+4. Longest Increasing Subsequence (LIS)
+5. Subset Sum
+6. Matrix Chain Multiplication
+
+## Sample problem: Calculate the n-th Fibonacci number.
+
+### Example:
+
+- Input: n = 5
+- Output: 5 (The first five Fibonacci numbers are 0, 1, 1, 2, 3, 5)
+
+### Explanation:
+1. Use a bottom-up approach to calculate the n-th Fibonacci number.
+2. Start with the first two numbers (0 and 1) and iterate to calculate the next numbers like (dp[i] = dp[i - 1] + dp[i - 2]).
+
+## LeetCode Problems:
+1. Climbing Stairs (LeetCode #70)
+2. House Robber (LeetCode #198)
+3. Coin Change (LeetCode #322)
+4. Longest Common Subsequence (LCS) (LeetCode #1143)
+5. Longest Increasing Subsequence (LIS) (LeetCode #322)
+6. Partition Equal Subset Sum (LeetCode #416)
+
 # References
 
 1. [Перебор. Жадные алгоритмы. Динамическое программирование](https://foxford.ru/wiki/informatika/odnomernoe-dinamicheskoe-programmirovanie-kolichestvo-sposobov) - видео теория для школьников от Владимира Гуровиц.

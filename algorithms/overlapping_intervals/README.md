@@ -6,6 +6,11 @@ how to allow customers to book table at a restaurant without conflict?
 How to schedule resources on a CPU ? How to assign class to teachers? 
 Therefore, there are many Leetcode problems that involve the interval operations.
 
+The Overlapping Intervals pattern is used to merge or handle overlapping intervals in an array.
+
+In an interval array sorted by start time, two intervals [a, b] and [c, d] overlap if b >= c (i.e., the end time of the first interval is greater than or equal to the start time of the second interval).
+
+
 ## 1. Understand the basic interval relations
 
 There are not that many interval relations. 
@@ -107,6 +112,26 @@ while i < len(nums):
 
     i += 1
 ```
+
+## Sample Problem:
+Given a list of intervals, merge all overlapping intervals.
+
+### Example:
+
+- Input: intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+- Output: [[1, 6], [8, 10], [15, 18]]
+
+### Explanation:
+1. Sort the intervals by their start time.
+2. Create an empty list called merged to store the merged intervals.
+3. Iterate through the intervals and check if it overlaps with the last interval in the merged list.
+4. If it overlaps, merge the intervals by updating the end time of the last interval in merged.
+5. If it does not overlap, simply add the current interval to the merged list.
+
+## LeetCode Problems:
+1. Merge Intervals (LeetCode #56)
+2. Insert Interval (LeetCode #57)
+3. Non-Overlapping Intervals (LeetCode #435)
 
 # References:
 

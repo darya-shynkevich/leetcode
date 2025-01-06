@@ -96,10 +96,23 @@ def monotonic_decreasing(nums):
 
 Complexity Analysis:
 1. Time Complexity: O(N), each element is processed only twice, once for the push operation and once for the pop operation.
-2. Auxiliary Space: O(N) 
+2. Auxiliary Space: O(N)
+
+## Sample Problem:
+Find the next greater element for each element in an array. Output -1 if the greater element doesn’t exist.
+
+### Example:
+
+Input: nums = [2, 1, 2, 4, 3]
+Output: [4, 2, 4, -1, -1]
+
+### Explanation:
+1. Use a stack to keep track of elements for which we haven’t found the next greater element yet.
+2. Iterate through the array, and for each element, pop elements from the stack until you find a greater element.
+3. If the stack is not empty, set the result for index at the top of the stack to current element.
+4. Push the current element onto the stack.
 
 ## Key Points to Identify Monotonic Stack Problems
-
 1. **Nearest Greater or Smaller Element**: Monotonic stacks are commonly used to find the nearest greater or smaller element to the left or right of each element in an array or sequence. If a problem requires you to find such elements efficiently, it’s a strong indicator that a monotonic stack might be useful.
 2. Monotonic Property: The term “monotonic” refers to the fact that the stack maintains a specific ordering property. There are two types of monotonic stacks:
    * Increasing Monotonic Stack: This stack is used when you need to find the nearest smaller element to the right for each element. It keeps elements in non-decreasing order, meaning the top of the stack contains the largest element seen so far. 
@@ -119,6 +132,11 @@ Here are some applications of monotonic stacks:
 4. [Finding Maximum Area in Binary Matrix](https://www.geeksforgeeks.org/introduction-to-monotonic-stack-2/#:~:text=Finding%20Maximum%20Area%20in%20Binary%20Matrix): Monotonic stacks can also be used to find the maximum area of a rectangle in a binary matrix. This is a variation of the maximum area histogram problem.
 5. [Finding Sliding Window Maximum/Minimum:](Finding Sliding Window Maximum/Minimum) Monotonic stacks can be used to efficiently find the maximum or minimum elements within a sliding window of a given array.
 6. [Expression Evaluation](Expression Evaluation): Monotonic stacks can be used to evaluate expressions involving parentheses, such as checking for balanced parentheses or evaluating the value of an arithmetic expression.
+
+## LeetCode Problems:
+1. Next Greater Element I (LeetCode #496)
+2. Daily Temperatures (LeetCode #739)
+3. Largest Rectangle in Histogram (LeetCode #84)
 
 # References:
 1. [Monotonic Stack + List of problems on Leetcode](!https://liuzhenglaichn.gitbook.io/algorithm/monotonic-stack)

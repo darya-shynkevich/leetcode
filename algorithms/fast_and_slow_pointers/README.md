@@ -1,21 +1,14 @@
-# Sliding Window
+# Fast & Slow Pointers
 
-The Sliding Window pattern is used to find a subarray or substring that satisfies a specific condition, optimizing the time complexity by maintaining a window of elements.
-
-Use this pattern when dealing with problems involving contiguous subarrays or substrings.
+The Fast & Slow Pointers (Tortoise and Hare) pattern is used to detect cycles in linked lists and other similar structures.
 
 ### Sample Problem:
-Find the maximum sum of a subarray of size k.
-
-### Example:
-
-- Input: nums = [2, 1, 5, 1, 3, 2], k = 3
-- Output: 9
+Detect if a linked list has a cycle.
 
 ### Explanation:
-1. Start with the sum of the first k elements.
-2. Slide the window one element at a time, subtracting the element that goes out of the window and adding the new element.
-3. Keep track of the maximum sum encountered.
+1. Initialize two pointers, one moving one step at a time (slow) and the other moving two steps at a time (fast).
+2. If there is a cycle, the fast pointer will eventually meet the slow pointer.
+3. If the fast pointer reaches the end of the list, there is no cycle.
 
 ## LeetCode Problems:
 1. Maximum Average Subarray I (LeetCode #643)

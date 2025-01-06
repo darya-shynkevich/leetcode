@@ -30,6 +30,10 @@ There are a few ways we can use the Two Pointer approach. First, if the input is
 4. If we need to make swaps between indices.
 5. If we partition the array.
 
+### LeetCode Problems:
+1. Two Sum II — Input Array is Sorted (LeetCode #167)
+2. 3Sum (LeetCode #15)
+3. Container With Most Water (LeetCode #11)
 
 ### References:
 1. [Leetcode is Easy! The Two Pointer Pattern]([https://medium.com/@timpark0807/leetcode-is-easy-two-pointers-90b9b0f2eb43](https://www.google.com/url?q=https://medium.com/@timpark0807/leetcode-is-easy-two-pointers-90b9b0f2eb43&sa=D&source=calendar&usd=2&usg=AOvVaw3HOscey4eQ6T6lcrlqObK2)  )
